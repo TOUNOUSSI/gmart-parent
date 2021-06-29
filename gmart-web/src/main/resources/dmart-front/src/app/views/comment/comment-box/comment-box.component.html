@@ -1,0 +1,24 @@
+<div class="comment" id="{{ id }}">
+  <img
+    [src]="profileImageAvatar"
+    alt="{{ comment.commenterProfile.firstname }} {{
+      comment.commenterProfile.lastname
+    }}"
+  />
+  <h3>
+    <a href=""
+      >{{ comment.commenterProfile.firstname }}
+      {{ comment.commenterProfile.lastname }}</a
+    >
+  </h3>
+  <br />
+  <div class="content">
+    <p>
+      {{ comment.value }}
+    </p>
+    <span
+      ><a href="#">Like</a> · <a href="#">Reply</a>
+      <time> · {{ comment.commentDate | date: "MMM d, y, h:mm:ss a" }}</time>
+    </span>
+  </div>
+</div>

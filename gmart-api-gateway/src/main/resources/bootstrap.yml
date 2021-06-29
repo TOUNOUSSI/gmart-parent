@@ -1,0 +1,32 @@
+server:
+ port: 8762
+ 
+spring:
+ application:
+   name: GMART-API-GATEWAY      
+ 
+           
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  
+eureka: 
+ client:
+   registerWithEureka: true
+   fetchRegistry: true
+   registryFetchIntervalSeconds: 5
+   serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+   
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 50000
+ribbon: 
+       ServerListRefreshInterval: 10                 
+       ConnectTimeout: 3000
+       ReadTimeout: 50000
+  
